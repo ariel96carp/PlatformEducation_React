@@ -1,6 +1,6 @@
 import { Formik, Field, Form, ErrorMessage } from "formik"
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 const Register = () => {
     const [ userCreated, setUserCreated ] = useState(false)
@@ -78,8 +78,20 @@ const Register = () => {
             {({ errors }) => (
                 <div className="form-container l-40 m-60 s-100 center-block">
                     <div className="wrapper">
-                        <h1 className="title center-content">Iniciar sesión</h1>
+                        <h1 className="title center-content">Registro de Usuario</h1>
                         <Form className="login-form" action="#" method="POST">
+                            <div className="input-container">
+                                <label htmlFor="user-name">Nombre completo</label>
+                                <Field
+                                    type="text"
+                                    id="user-name"
+                                    name="name"
+                                    placeholder="Ingrese un nombre">
+                                </Field>
+                                <ErrorMessage name="name" component={() => (
+                                    <p className="input-message error">{errors.name}</p>
+                                )} />
+                            </div>
                             <div className="input-container">
                                 <label htmlFor="user-email">Correo electrónico</label>
                                 <Field 
@@ -90,18 +102,6 @@ const Register = () => {
                                 </Field>
                                 <ErrorMessage name="email" component={() => (
                                     <p className="input-message error">{errors.email}</p>
-                                )} />
-                            </div>
-                            <div className="input-container">
-                                <label htmlFor="user-name">Nombre</label>
-                                <Field
-                                    type="text"
-                                    id="user-name"
-                                    name="name"
-                                    placeholder="Ingrese un nombre">
-                                </Field>
-                                <ErrorMessage name="name" component={() => (
-                                    <p className="input-message error">{errors.name}</p>
                                 )} />
                             </div>
                             <div className="input-container">
@@ -120,7 +120,7 @@ const Register = () => {
                         </Form>
                         {userCreated &&
                             <p className="form-message success center-content success">
-                                ¡El usuario se ha creado exitosamente!
+                                ¡El usuario ha sido creado exitosamente!
                             </p>
                         }
                         {userError &&
@@ -128,6 +128,9 @@ const Register = () => {
                                 El usuario no ha podido crearse. Por favor inténtelo de vuelta más tarde.
                             </p>
                         }
+                        <p className="center-content">
+                            ¿Ya tienes una cuenta de usuario? <Link to="/login" className="form-link">Iniciar sesión</Link>
+                        </p>
                     </div>
                 </div>
             )}

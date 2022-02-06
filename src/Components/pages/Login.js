@@ -1,6 +1,6 @@
 import { Formik, Field, Form, ErrorMessage } from "formik"
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 const Login = () => {
     const [ loginError, setLoginError ] = useState(false)
@@ -102,6 +102,9 @@ const Login = () => {
                                 El usuario ingresado no existe.
                             </p>
                         }
+                        <p className="center-content">
+                            ¿No tienes una cuenta de usuario? <Link to="/registro" className="form-link">Crear cuenta</Link>
+                        </p>
                     </div>
                 </div>
             )}

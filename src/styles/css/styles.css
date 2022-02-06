@@ -524,6 +524,10 @@ input {
   color: #ef4539;
 }
 
+.form-container .form-link {
+  color: #3ad3ee;
+}
+
 .login-form .input-message {
   font-family: var(--medium-font);
   font-size: .9em;

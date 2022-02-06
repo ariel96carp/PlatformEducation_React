@@ -24,6 +24,10 @@
             color: map-get($colors, error-color);
         }
     }
+
+    .form-link{
+        color: map-get($colors, link-color)
+    }
 }
 
 .login-form{
