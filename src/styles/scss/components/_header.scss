@@ -1,0 +1,99 @@
+.main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-size);
+    border-bottom: 1px solid map-get($colors, primary-color);
+    z-index: var(--z-fixed);
+
+    .wrapper{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .modal{
+        position: fixed;
+        top: var(--header-size);
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        pointer-events: none;
+
+        &.active{
+            opacity: 1;
+            pointer-events: auto;
+            transition: opacity .5s;
+        }
+    }
+}
+
+.wrapper{
+    img{
+        height: 2em;
+    }
+
+    .menu-toggle{
+        position: relative;
+        width: 2.2em;
+        height: 1.6em;
+        cursor: pointer;
+        @include toggle-menu(middle, map-get($colors, primary-color));
+
+        @include media-quarie(medium){
+            display: none;
+        }
+    }
+}
+
+.nav{
+    position: fixed;
+    top: var(--header-size);
+    right: -80vw;
+    width: 70vw;
+    height: calc(100vh - var(--header-size));
+    background-color: map-get($colors, secondary-color);
+
+    @include media-quarie(medium){
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+    }
+
+    &.show{
+        right: 0;
+        transition: right .5s;
+    }
+}
+
+.menu{
+    font-family: var(--medium-font);
+
+    @include media-quarie(medium){
+        display: flex;
+    }
+
+    .item{
+        border-bottom: 1px solid map-get($colors, primary-color);
+
+        @include media-quarie(medium){
+            border-bottom: none;
+        }
+    }
+
+    .link{
+        padding: 1.5em;
+        color: map-get($colors, primary-color);
+        width: 100%;
+
+        @include media-quarie(medium){
+            padding: .5em .75em;
+            width: auto;
+        }
+    }
+}

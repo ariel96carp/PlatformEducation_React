@@ -1,0 +1,60 @@
+.form-container{
+    color: map-get($colors, primary-color);
+    padding-top: 2em;
+
+    .title{
+        font-family: var(--bold-font);
+    }
+
+    .login-form{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    .form-message{
+        font-family: var(--medium-font);
+        margin-bottom: 0;
+    
+        &.success{
+            color: map-get($colors, success-color);
+        }
+
+        &.error{
+            color: map-get($colors, error-color);
+        }
+    }
+}
+
+.login-form{
+    .input-message{
+        font-family: var(--medium-font);
+        font-size: .9em;
+        margin: .5rem 0 0;
+
+        &.error{
+            color: map-get($colors, error-color);
+        }
+
+        @include media-quarie(medium){
+            font-size: .8em;
+        }
+    }
+}
+
+.input-container{
+    label{
+        display: block;
+        margin-bottom: .5em;
+    }
+
+    input{
+        width: 100%;
+        
+        &:focus{
+            border: 2px solid map-get($colors, button-color);
+            border-radius: 3px;
+            outline: none;
+        }
+    }
+}

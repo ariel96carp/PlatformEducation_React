@@ -1,0 +1,81 @@
+// PUNTOS DE QUIEBRE
+$breakpoints:(
+    small: 320px,
+    medium: 640px,
+    large: 1024px,
+    xlarge: 1440px
+);
+
+// VARIABLES DEL CONTENEDOR (WRAPPER)
+$min-wrapper-width : map-get($breakpoints, small);
+$max-wrapper-width : 1200px;
+
+// VARIABLES DE APILAMIENTO
+:root{
+    --z-back: -10;
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+// PALETA DE COLORES
+$colors:(
+    primary-color: hsl(232, 0, 44),
+    secondary-color: hsl(232, 41, 37),
+    button-color: hsl(205, 100, 44),
+    error-color: hsl(4, 85, 58),
+    success-color: hsl(140, 100, 40)
+);
+
+// TAMAÑO DEL HEADER
+:root{
+    --header-size: 3.5rem;
+
+    @media screen and (min-width: map-get($breakpoints, medium)){
+        --header-size: 4rem;
+    }
+}
+
+// FUENTES
+@font-face{
+    font-family: "regular-font";
+    font-style: normal;
+    font-weight: 400;
+    font-display: fallback;
+    src: 
+        local("open-sans-regular"), 
+        local("Open-Sans-Regular"), 
+        url(/src/styles/scss/fonts/OpenSans-Regular.ttf)
+        format("truetype");
+}
+
+@font-face{
+    font-family: "medium-font";
+    font-style: normal;
+    font-weight: 500;
+    font-display: fallback;
+    src: 
+        local("open-sans-medium"), 
+        local("Open-Sans-Medium"), 
+        url(/src/styles/scss/fonts/OpenSans-Medium.ttf)
+        format("truetype");
+} 
+
+@font-face{
+    font-family: "bold-font";
+    font-style: normal;
+    font-weight: 700;
+    font-display: fallback;
+    src: 
+        local("open-sans-bold"), 
+        local("Open-Sans-Bold"), 
+        url(/src/styles/scss/fonts/OpenSans-Bold.ttf)
+        format("truetype");
+}
+
+:root{
+    --regular-font: "regular-font", sans serif;
+    --medium-font: "medium-font", sans serif;
+    --bold-font: "bold-font", san serif;
+}
