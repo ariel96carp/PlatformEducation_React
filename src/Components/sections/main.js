@@ -10,6 +10,7 @@ import Speciality from "../pages/Speciality"
 import Class from "../pages/Class"
 import Page404 from "../pages/Page404"
 import ProtectedRoute from "../routes/ProtectedRoute"
+import PublicRoute from "../routes/PublicRoute"
 
 const Main = () => {
     return (
@@ -50,8 +51,16 @@ const Main = () => {
                         <Teachers />
                     </ProtectedRoute>}>
                 </Route>
-                <Route path="/registro" element={<Register />}></Route>
-                <Route path="/login" element={<Login />}></Route>
+                <Route path="/registro" element={
+                    <PublicRoute>
+                        <Register />
+                    </PublicRoute>}>
+                </Route>
+                <Route path="/login" element={
+                    <PublicRoute>
+                        <Login />
+                    </PublicRoute>}>
+                </Route>
                 <Route path="*" element={<Page404 />}></Route>
             </Routes>
         </main>

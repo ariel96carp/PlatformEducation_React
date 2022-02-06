@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom"
 
 const Login = () => {
     const [ loginError, setLoginError ] = useState(false)
+    const navigate = useNavigate()
 
     const userLogin = async (data) => {
-        const urlApi = "https://api-edteam.alejogs4.now.sh/login"
+        const urlApi = process.env.REACT_APP_USER_API_URL
         const userData = {
             email: data.email,
             password: data.password
@@ -19,12 +20,13 @@ const Login = () => {
             body: JSON.stringify(userData)
         }
 
-        const response = await fetch(urlApi, params)
+        const response = await fetch(`${urlApi}/login`, params)
         switch(response.status)
         {
             case 200:
                 const dataResponse = await response.json()
                 localStorage.setItem("educationToken", dataResponse.token)
+                navigate("/")
                 break
             default:
                 setLoginError(true)
