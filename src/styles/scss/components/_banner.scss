@@ -1,0 +1,21 @@
+.banner{
+    background: url(/src/styles/img/universidad.jpg), hsl(7, 75, 63);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: soft-light;
+    padding: 4em 0 7em;
+    color: white;
+
+    .title{
+        font-family: var(--bold-font);
+    }
+
+    .description{
+        margin: 0;
+    }
+
+    @include media-quarie(medium){
+        padding: 5em 0 8em;
+    }
+}

@@ -1,6 +1,8 @@
 import edteamLogo from "../img/logo-alt.svg"
+import PrivateMenu from "../molecules/PrivateMenu"
+import PublicMenu from "../molecules/PublicMenu"
 import { useRef, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 
 const Header = () => {
     const navModal = useRef()
@@ -24,6 +26,15 @@ const Header = () => {
             window.removeEventListener("resize", hideMenu)
         })
     }, [])
+    const publicRoutes = ["/login", "/registro"]
+    const privateRoutes = [
+        "/especialidades",
+        "/especialidades:id", 
+        "/cursos",
+        "/cursos/:id",
+        "/clase",
+        "/profesores",
+        "/"]
 
     const showMenu = () => {
         navMenu.current.classList.toggle("show")
@@ -57,36 +68,22 @@ const Header = () => {
                     <div className="middle"></div>
                 </div>
                 <nav className="nav" ref={navMenu}>
-                    <ul className="menu">
-                        <li className="item">
-                            <Link 
-                                to="/"
-                                className="link" 
-                                onClick={hideMenuFromItem}>
-                            Inicio</Link>
-                        </li>
-                        <li className="item">
-                            <Link 
-                                to="/especialidades"
-                                className="link" 
-                                onClick={hideMenuFromItem}>
-                            Especialidades</Link>
-                        </li>
-                        <li className="item">
-                            <Link 
-                                to="/cursos" 
-                                className="link"
-                                onClick={hideMenuFromItem}>
-                            Cursos</Link>
-                        </li>
-                        <li className="item">
-                            <Link 
-                                to="/profesores" 
-                                className="link"
-                                onClick={hideMenuFromItem}>
-                            Profesores</Link>
-                        </li>
-                    </ul>
+                    <Routes>
+                        {publicRoutes.map((path, index) => (
+                            <Route 
+                                path={path}
+                                element={<PublicMenu hideMenu={hideMenuFromItem} />}
+                                key={index}
+                            />
+                        ))}
+                        {privateRoutes.map((path, index) => (
+                            <Route
+                                path={path}
+                                element={<PrivateMenu hideMenu={hideMenuFromItem} />}
+                                key={index}
+                            />
+                        ))}
+                    </Routes>
                 </nav>
             </div>
         </header>

@@ -559,4 +559,28 @@ input {
   outline: none;
 }
 
+.banner {
+  background: url(/src/styles/img/universidad.jpg), #e76a5a;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  padding: 4em 0 7em;
+  color: white;
+}
+
+.banner .title {
+  font-family: var(--bold-font);
+}
+
+.banner .description {
+  margin: 0;
+}
+
+@media screen and (min-width: 40rem) {
+  .banner {
+    padding: 5em 0 8em;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */
