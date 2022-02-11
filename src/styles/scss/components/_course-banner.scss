@@ -1,0 +1,49 @@
+.course-banner{
+    padding: 2em 0 5em;
+    background: url(/src/styles/img/lenguaje-de-programacion.webp), linear-gradient(to right, #000000, #434343);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: white;
+
+    @include media-quarie(medium){
+        padding: 3em 0 6em;
+    }
+}
+
+.banner-container{
+    display: grid;
+    gap: 1.5rem;
+
+    @include media-quarie(medium){
+        grid-template-columns: repeat(auto-fit, minmax(px-to-rem(400px), 1fr));
+    }
+
+    .speciality{
+        color: hsl(208, 62, 53);
+    }
+}
+
+.banner-content{
+    .course-title{
+        font-family: var(--bold-font);
+        line-height: 1.1em;
+        margin-bottom: 0;
+    }
+
+    .course-description{
+        margin: 0;
+        font-size: .9em;
+        color: grey;
+
+        @include media-quarie(medium){
+            font-size: .85em;
+        }
+    }
+
+    .course-content{
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+    }
+}

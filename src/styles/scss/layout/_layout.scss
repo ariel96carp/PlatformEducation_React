@@ -72,10 +72,10 @@
     padding: 2em 0;
 
     @include media-quarie(medium){
-        padding: 4em 0;
+        padding: 3em 0;
     }
 
-    @include media-quarie(large){
+    @include media-quarie(xlarge){
         padding: 5em 0;
     }
 }

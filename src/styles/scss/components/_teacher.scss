@@ -1,0 +1,27 @@
+.teacher-container{
+    height: px-to-rem(250px);
+    color: map-get($colors, primary-color);
+    
+    img{
+        height: 70%;
+        margin: 0 auto;
+        object-fit: cover;
+        clip-path: circle(50%);
+    }
+
+    .name{
+        font-family: var(--medium-font);
+    }
+
+    .name,.country{
+        margin: 0;
+    }
+
+    .image,.name{
+        margin-bottom: .5rem;
+    }
+
+    @include media-quarie(medium){
+        height: px-to-rem(300px);
+    }
+}

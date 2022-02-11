@@ -1,0 +1,44 @@
+.main-section{
+    color: map-get($colors, primary-color);
+}
+
+.posts-grid{
+    display: grid;
+    gap: 1rem;
+
+    @include media-quarie(medium){
+        grid-template-columns: 70% 30%;
+        gap: 1.5rem;
+    }
+
+    @include media-quarie(large){
+        grid-template-columns: 60% 40%;
+    }
+}
+
+.posts{
+    .title{
+        font-family: var(--bold-font);
+    }
+}
+
+.publication{
+    .publication-title{
+        font-family: var(--bold-font);
+    }
+    .publication-content{
+        margin-top: 0
+    }
+
+    &:not(:last-child){
+        margin-bottom: 1.5rem;
+    }
+}
+
+.publication-info{
+    margin: 0;
+
+    .user-name{
+        font-family: var(--bold-font);
+    }
+}

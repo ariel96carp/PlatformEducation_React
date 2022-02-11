@@ -1,0 +1,36 @@
+.speciality-temary{
+    color: map-get($colors, primary-color);
+
+    h2{
+        font-family: var(--bold-font);
+    }
+}
+
+.course-speciality{
+    display: grid;
+    gap: 1rem;
+    font-size: .9em;
+
+    &:not(:last-child){
+        margin-bottom: 1.5rem;
+    }
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    @include media-quarie(medium){
+        grid-template-columns: 1fr 2fr;
+        gap: 1.5rem;
+    }
+}
+
+.speciality-content{
+    .title{
+        margin-bottom: .5rem;
+    }
+
+    .info{
+        margin: 0;
+    }
+}

@@ -1,21 +1,42 @@
 .banner{
-    background: url(/src/styles/img/universidad.jpg), hsl(7, 75, 63);
+    background: url(/src/styles/img/universidad.jpg), var(--banner-color);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: soft-light;
     padding: 4em 0 7em;
     color: white;
-
+    
     .title{
         font-family: var(--bold-font);
     }
-
+    
     .description{
         margin: 0;
     }
-
+    
     @include media-quarie(medium){
         padding: 5em 0 8em;
+    }
+    
+    &.teachers{
+        --banner-color: hsl(7, 75%, 63%);
+    }
+
+    &.specialities{
+        --banner-color: hsl(205, 100%, 44%);
+    }
+
+    &.courses{
+        --banner-color: hsl(7, 0%, 34%);
+    }
+}
+
+.grid-container{
+    display: grid;
+    gap: 1.5rem;
+
+    @include media-quarie(medium){
+        grid-template-columns: repeat(auto-fill, minmax(px-to-rem(250px), 1fr));
     }
 }

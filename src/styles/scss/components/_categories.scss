@@ -1,0 +1,14 @@
+.categorie-item{
+    margin-bottom: .75rem;
+
+    &::before{
+        --image-size: 1em;
+        background-image: url(/src/styles/img/check.png);
+    }
+}
+
+.categories-list{
+    .title{
+        font-family: var(--bold-font);
+    }
+}

@@ -1,0 +1,28 @@
+.main-banner{
+    background-color: hsl(233, 17, 35);
+}
+
+.content-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(px-to-rem(320px), 1fr));
+    gap: 1rem;
+}
+
+.content{
+    color: white;
+
+    .title{
+        font-family: var(--bold-font);
+        line-height: 1.1em;
+    }
+
+    .description{
+        margin-top: 0;
+    }
+
+    .button{
+        background-color: hsl(40, 86, 57);
+        padding: .75em;
+        font-family: var(--medium-font);
+    }
+}

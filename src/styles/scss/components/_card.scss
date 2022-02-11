@@ -1,0 +1,71 @@
+.card-container{
+    $image-height: px-to-rem(180px);
+    height: px-to-rem(300px);
+    color: map-get($colors, primary-color);
+
+    .course-image{
+        width: 100%;
+        height: $image-height;
+        object-fit: cover;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .content{
+        height: calc(100% - #{$image-height});
+        padding: 1em 1em 0;
+        background-color: #212E36;
+        border-radius: 0 0 5px 5px;
+        position: relative;
+
+        &::after{
+            content: "";
+            display: block;
+            background-color: grey;
+            width: 95%;
+            height: 1rem;
+            border-radius: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateY(70%) translateX(-50%);
+            filter: blur(3px) opacity(.4);
+            z-index: var(--z-back);
+        }
+    }
+    
+    .title,.description{
+        margin: 0;
+    }
+    
+    .title{
+        color: white;
+        margin-bottom: .5rem;
+    }
+
+    @include media-quarie(medium){
+        $image-height: px-to-rem(180px);
+        height: px-to-rem(350px);
+        font-size: .9em;
+
+        .course-image{
+            height: $image-height;
+        }
+
+        .content{
+            height: calc(100% - #{$image-height});
+        }
+    }
+
+    @include media-quarie(large){
+        $image-height: px-to-rem(150px);
+        font-size: .8em;
+
+        .course-image{
+            height: $image-height;
+        }
+
+        .content{
+            height: calc(100% - #{$image-height});
+        }
+    }
+}

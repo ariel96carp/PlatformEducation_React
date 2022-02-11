@@ -10,7 +10,7 @@ const getAllPosts = () => async dispatch => {
             const dataResponse = await response.json()
             return dispatch ({
                 type: types.GET_ALL_POSTS,
-                data: dataResponse.data
+                data: dataResponse
             })
     }
 }
@@ -23,7 +23,7 @@ const getAllSpecialities = () => async dispatch => {
             const dataResponse = await response.json()
             return dispatch ({
                 type: types.GET_ALL_SPECIALITIES,
-                data: dataResponse.data
+                data: dataResponse
             })
     }
 }
@@ -49,7 +49,7 @@ const getAllTeachers = () => async dispatch => {
             const dataResponse = await response.json()
             return dispatch ({
                 type: types.GET_ALL_TEACHERS,
-                data: dataResponse.data
+                data: dataResponse
             })
     }
 }
@@ -68,27 +68,27 @@ const getPost = (id) => async dispatch => {
 }
 
 const getSpeciality = (id) => async dispatch => {
-    const response = await fetch(`${apiURL}/especialidades/${id}`)
+    const response = await fetch(`${apiURL}/especialidad/${id}`)
     switch(response.status)
     {
         case 200:
             const dataResponse = await response.json()
             return dispatch ({
                 type: types.GET_SPECIALITY,
-                data: dataResponse.data
+                data: dataResponse
             })
     }
 }
 
 const getCourse = (id) => async dispatch => {
-    const response = await fetch(`${apiURL}/cursos/${id}`)
+    const response = await fetch(`${apiURL}/curso/${id}`)
     switch(response.status)
     {
         case 200:
             const dataResponse = await response.json()
             return dispatch ({
                 type: types.GET_COURSE,
-                data: dataResponse.data
+                data: dataResponse
             })
     }
 }

@@ -1,0 +1,17 @@
+.cart-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(px-to-rem(250px), 1fr));
+    gap: .5rem;
+    margin-bottom: 1.5rem;
+}
+
+.course-cart{
+    padding-bottom: 2em;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+
+    img{
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px 5px 0 0;
+    }
+}

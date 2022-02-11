@@ -4,14 +4,15 @@
     left: 0;
     width: 100%;
     height: var(--header-size);
-    border-bottom: 1px solid map-get($colors, primary-color);
     z-index: var(--z-fixed);
+    background-color: white;
 
     .wrapper{
         height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        background-color: inherit;
     }
 
     .modal{
@@ -30,10 +31,29 @@
             transition: opacity .5s;
         }
     }
+
+    &::after{
+        content: "";
+        display: block;
+        width: 90%;
+        height: 1rem;
+        background-color: grey;
+        border-radius: 100%;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        filter: blur(3px) opacity(.3);
+        z-index: var(--z-back);
+
+        @include media-quarie(medium){
+            width: 85%;
+        }
+    }
 }
 
 .wrapper{
-    img{
+    .edteam-image{
         height: 2em;
     }
 

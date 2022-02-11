@@ -1,4 +1,4 @@
-import edteamLogo from "../img/logo-alt.svg"
+import edteamLogo from "../img/edteam-ux.svg"
 import PrivateMenu from "../molecules/PrivateMenu"
 import PublicMenu from "../molecules/PublicMenu"
 import { useRef, useEffect } from "react"
@@ -26,10 +26,10 @@ const Header = () => {
             window.removeEventListener("resize", hideMenu)
         })
     }, [])
-    const publicRoutes = ["/login", "/registro"]
+    const publicRoutes = ["/login", "/registro", "*"]
     const privateRoutes = [
         "/especialidades",
-        "/especialidades:id", 
+        "/especialidades/:id", 
         "/cursos",
         "/cursos/:id",
         "/clase",
@@ -63,7 +63,7 @@ const Header = () => {
         <header className="main-header">
             <div className="modal" ref={navModal}></div>
             <div className="wrapper">
-                <img src={edteamLogo} alt="Logo de EDteam"></img>
+                <img src={edteamLogo} alt="Logo de EDteam" className="edteam-image"></img>
                 <div className="menu-toggle" onClick={showMenu}>
                     <div className="middle"></div>
                 </div>
