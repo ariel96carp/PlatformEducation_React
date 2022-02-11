@@ -1069,4 +1069,8 @@ input {
   padding-bottom: 1em;
 }
 
+.not-found {
+  font-family: var(--bold-font);
+}
+
 /*# sourceMappingURL=styles.css.map */
