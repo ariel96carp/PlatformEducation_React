@@ -1,4 +1,5 @@
 import propTypes from "prop-types"
+import { Link } from "react-router-dom"
 
 const CourseTemary = ({ title, description, subjects }) => {
     return (
@@ -11,7 +12,10 @@ const CourseTemary = ({ title, description, subjects }) => {
                         <li
                             key={subject.subject.id}
                             className="theme-item"
-                        >{subject.subject.title}</li>
+                        ><Link to={`/clase/${subject.subject.id}`}>
+                            {subject.subject.title}
+                        </Link></li>
+                        
                     ))
                 }
             </ul>

@@ -9,8 +9,8 @@ import Specialities from "../pages/Specialities"
 import Speciality from "../pages/Speciality"
 import Class from "../pages/Class"
 import Page404 from "../pages/Page404"
-import ProtectedRoute from "../routes/ProtectedRoute"
-import PublicRoute from "../routes/PublicRoute"
+import ProtectedRoute from "../Routes/ProtectedRoute"
+import PublicRoute from "../Routes/PublicRoute"
 
 const Main = () => {
     return (
@@ -41,7 +41,7 @@ const Main = () => {
                         <Course />
                     </ProtectedRoute>}>
                 </Route>
-                <Route path="/clase" element={
+                <Route path="/clase/:id" element={
                     <ProtectedRoute>
                         <Class />
                     </ProtectedRoute>}>

@@ -94,14 +94,14 @@ const getCourse = (id) => async dispatch => {
 }
 
 const getClass = (id) => async dispatch => {
-    const response = await fetch(`${apiURL}/clases/${id}`)
+    const response = await fetch(`${apiURL}/clase/${id}`)
     switch(response.status)
     {
         case 200:
             const dataResponse = await response.json()
             return dispatch ({
                 type: types.GET_CLASS,
-                data: dataResponse.data
+                data: dataResponse
             })
     }
 }

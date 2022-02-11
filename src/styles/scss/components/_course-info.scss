@@ -20,9 +20,17 @@
         list-style-type: disc;
         padding-inline-start: 30px;     
     }
+}
 
-    .theme-item{
-        margin-bottom: .5rem;
+.theme-item{
+    margin-bottom: 1.5rem;
+
+    a{
+        color: hsl(230, 78, 49);
+
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }
 

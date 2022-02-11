@@ -32,7 +32,7 @@ const Header = () => {
         "/especialidades/:id", 
         "/cursos",
         "/cursos/:id",
-        "/clase",
+        "/clase/:id",
         "/profesores",
         "/"]
 

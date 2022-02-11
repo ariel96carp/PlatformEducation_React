@@ -4,10 +4,13 @@ import store from "../redux/store"
 import { connect } from "react-redux"
 import { getSpeciality } from "../redux/actionscreator"
 import { useEffect } from "react"
+import { useParams } from "react-router-dom"
 
 const Speciality = ({ speciality }) => {
+    const { id } = useParams()
+
     useEffect(() => {
-        store.dispatch(getSpeciality(1))
+        store.dispatch(getSpeciality(id))
     }, [])
 
     return (
