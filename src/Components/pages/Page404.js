@@ -1,6 +1,11 @@
 const Page404 = () => {
     return (
-        <h1>404 Not Found</h1>
+        <section className="error-section">
+            <div className="error-content center-content">
+                <h1>404</h1>
+                <p>Página no encontrada</p>
+            </div>
+        </section>
     )
 }
 
