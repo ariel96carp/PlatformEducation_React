@@ -629,7 +629,7 @@ input {
 }
 
 .teacher-container {
-  height: 15.625rem;
+  height: 12.5rem;
   color: #707070;
 }
 
@@ -654,7 +654,7 @@ input {
 
 @media screen and (min-width: 40rem) {
   .teacher-container {
-    height: 18.75rem;
+    height: 15.625rem;
   }
 }
 

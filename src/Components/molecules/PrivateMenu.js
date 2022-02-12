@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom"
+import { useRef, useEffect } from "react"
 import PropTypes from "prop-types"
 
 const PrivateMenu = ({ hideMenu }) => {
+    const closeButton = useRef()
+    useEffect(() => {
+        const deleteToken = () => {
+            localStorage.removeItem("educationToken")
+        }
+
+        closeButton.current.addEventListener("click", deleteToken)
+    }, [])
+
     return (
         <ul className="menu">
             <li className="item">
@@ -31,6 +41,14 @@ const PrivateMenu = ({ hideMenu }) => {
                     className="link"
                     onClick={hideMenu}>
                 Profesores</Link>
+            </li>
+            <li className="item">
+                <Link
+                    ref={closeButton}
+                    to="/login"
+                    className="link"
+                    onClick={hideMenu}>
+                Cerrar sesión</Link>
             </li>
         </ul>
     )

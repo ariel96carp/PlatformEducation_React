@@ -25,6 +25,7 @@ const Teachers = ({ teachers }) => {
                                 key={teacher.id}
                                 name={teacher.name}
                                 country={teacher.country}
+                                image={teacher.picture}
                             />
                         ))
                     }

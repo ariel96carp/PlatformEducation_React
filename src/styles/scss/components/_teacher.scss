@@ -1,5 +1,5 @@
 .teacher-container{
-    height: px-to-rem(250px);
+    height: px-to-rem(200px);
     color: map-get($colors, primary-color);
     
     img{
@@ -22,6 +22,6 @@
     }
 
     @include media-quarie(medium){
-        height: px-to-rem(300px);
+        height: px-to-rem(250px);
     }
 }

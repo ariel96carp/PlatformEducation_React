@@ -41,16 +41,21 @@ const Home = ({ posts, courses }) => {
                         <div className="posts-grid">
                             <section className="posts">
                                 <h2 className="title">Ultimas publicaciones</h2>
-                                {posts &&
-                                    posts.map((post) => (
-                                        <Publication 
-                                            key={post.id}
-                                            title={post.title}
-                                            user={post.author}
-                                            date={post.fecha}
-                                            content={post.content}
-                                        />
-                                    ))
+                                {posts 
+                                    ? (
+                                        posts.map((post) => (
+                                            <Publication 
+                                                key={post.id}
+                                                title={post.title}
+                                                user={post.author}
+                                                date={post.fecha}
+                                                content={post.content}
+                                            />
+                                        ))
+                                    )
+                                    : (
+                                        <p>No hay ninguna publicación reciente.</p>
+                                    )
                                 }
                             </section>
                             <section className="categories-list">
