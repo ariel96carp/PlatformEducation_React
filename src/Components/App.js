@@ -7,18 +7,16 @@ import Main from "./sections/main"
 import Footer from "./sections/footer"
 import "../styles/css/styles.css"
 
-function App() {
-    return (
-        <Router>
-            <Provider store={store}>
-                <PersistGate loading={null} persistor={persistor}>
-                    <Header />
-                    <Main />
-                    <Footer />
-                </PersistGate>
-            </Provider>
-        </Router>
-    );
-}
+const App = () => (
+    <Router>
+        <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+                <Header />
+                <Main />
+                <Footer />
+            </PersistGate>
+        </Provider>
+    </Router>
+)
 
-export default App;
+export default App
