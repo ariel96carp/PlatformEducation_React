@@ -22,20 +22,18 @@ const Home = ({ posts, courses }) => {
                 <div className="wrapper">
                     <section className="cart-container">        
                         {courses &&
-                            courses.map((course, index) => {
-                                if (index <=3)
-                                {
-                                    return (
-                                        <div 
-                                            className="course-cart"
-                                            key={course.id}
-                                        >
-                                            <img src={course.picture}></img>
-                                            <h3>{course.name}</h3>
-                                        </div>
-                                    )
-                                }
-                            })
+                            courses.slice(0, 4).map((course) => (
+                                <div 
+                                    className="course-cart"
+                                    key={course.id}
+                                >
+                                    <img 
+                                        src={course.picture}
+                                        alt={`Curso de ${course.name}`}
+                                    />
+                                    <h3>{course.name}</h3>
+                                </div>
+                            ))
                         }
                     </section>
                         <div className="posts-grid">

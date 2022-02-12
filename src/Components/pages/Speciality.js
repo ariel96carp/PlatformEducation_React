@@ -24,7 +24,8 @@ const Speciality = ({ speciality }) => {
 
     if(speciality)
     {
-        if(!(speciality.id == id))
+        const specialityId = parseInt(id)
+        if(!(speciality.id === specialityId))
         {
             return (
                 <div className="wrapper section-padding">

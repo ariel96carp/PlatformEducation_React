@@ -12,7 +12,7 @@ const MainBanner = ({ title, description }) => {
                         <p className="description">{description}</p>
                         <Link to="/cursos" className="button">Ver cursos</Link>
                     </div>
-                    <img src={bannerImage} className="image"></img>
+                    <img src={bannerImage} alt ={`Curso de ${title}`} className="image"></img>
                 </div>
             </div>
         </div>

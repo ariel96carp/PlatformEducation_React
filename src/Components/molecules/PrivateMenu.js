@@ -14,7 +14,7 @@ const PrivateMenu = ({ hideMenu }) => {
         }
 
         closeButton.current.addEventListener("click", deleteToken)
-    }, [])
+    }, [ dispatch ])
 
     return (
         <ul className="menu">

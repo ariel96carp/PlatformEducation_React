@@ -51,7 +51,7 @@ const Register = () => {
             }}
             validate={( values ) => {
                 let errors = {}
-                const emailPattern = "[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?"
+                const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
                 if (!values.email)
                 {
                     errors.email = "Por favor ingrese un correo."

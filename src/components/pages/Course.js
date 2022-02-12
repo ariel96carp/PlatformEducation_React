@@ -24,7 +24,8 @@ const Course = ({ course }) => {
 
     if(course)
     {
-        if(!(course.id == id))
+        const courseId = parseInt(id)
+        if(!(course.id === courseId))
         {
             return (
                 <div className="wrapper section-padding">
