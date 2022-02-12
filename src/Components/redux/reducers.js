@@ -1,4 +1,20 @@
 import types from "./actions"
+import { combineReducers } from "redux"
+import { persistReducer } from "redux-persist"
+import storage from "redux-persist/lib/storage"
+
+const userReducer = ( state = {}, action ) => {
+    switch(action.type)
+    {
+        case types.LOGIN_USER:
+            return {
+                ...state,
+                token: action.data
+            }
+            default:
+                return state
+    }
+}
 
 const postReducer = ( state = {}, action ) => {
     switch(action.type)
@@ -85,4 +101,30 @@ const teacherReducer = ( state = {}, action ) => {
     }
 }
 
-export { postReducer, specialityReducer, courseReducer, classReducer, teacherReducer }
+const configStore = {
+    key: "root",
+    storage
+}
+
+const persistedReducer = persistReducer(
+    configStore,
+    combineReducers({
+        userReducer,
+        postReducer, 
+        specialityReducer, 
+        courseReducer, 
+        classReducer, 
+        teacherReducer
+    })
+)
+
+const appReducer = ( state, action ) => {
+    if (action.type === types.LOGOUT_USER)
+    {
+        localStorage.removeItem("persist:root")
+        state = undefined
+    }
+    return persistedReducer(state, action)
+}
+
+export default appReducer

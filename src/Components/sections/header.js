@@ -2,9 +2,9 @@ import edteamLogo from "../img/edteam-ux.svg"
 import PrivateMenu from "../molecules/PrivateMenu"
 import PublicMenu from "../molecules/PublicMenu"
 import { useRef, useEffect } from "react"
-import { Routes, Route } from "react-router-dom"
+import { connect } from "react-redux"
 
-const Header = () => {
+const Header = ({ userToken }) => {
     const navModal = useRef()
     const navMenu = useRef()
     useEffect(() => {
@@ -26,15 +26,6 @@ const Header = () => {
             window.removeEventListener("resize", hideMenu)
         })
     }, [])
-    const publicRoutes = ["/login", "/registro", "*"]
-    const privateRoutes = [
-        "/especialidades",
-        "/especialidades/:id", 
-        "/cursos",
-        "/cursos/:id",
-        "/clase/:id",
-        "/profesores",
-        "/"]
 
     const showMenu = () => {
         navMenu.current.classList.toggle("show")
@@ -68,26 +59,18 @@ const Header = () => {
                     <div className="middle"></div>
                 </div>
                 <nav className="nav" ref={navMenu}>
-                    <Routes>
-                        {publicRoutes.map((path, index) => (
-                            <Route 
-                                path={path}
-                                element={<PublicMenu hideMenu={hideMenuFromItem} />}
-                                key={index}
-                            />
-                        ))}
-                        {privateRoutes.map((path, index) => (
-                            <Route
-                                path={path}
-                                element={<PrivateMenu hideMenu={hideMenuFromItem} />}
-                                key={index}
-                            />
-                        ))}
-                    </Routes>
+                    {userToken
+                        ? <PrivateMenu hideMenu={hideMenuFromItem} />
+                        : <PublicMenu hideMenu={hideMenuFromItem}/>
+                    }
                 </nav>
             </div>
         </header>
     )
 }
 
-export default Header
+const mapStateToProps = (state) => ({
+    userToken: state.userReducer.token
+})
+
+export default connect(mapStateToProps, {})(Header)

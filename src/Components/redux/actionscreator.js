@@ -2,6 +2,15 @@ import types from "./actions"
 
 const apiURL = process.env.REACT_APP_API_URL
 
+const loginUser = ( token ) => ({
+    type: types.LOGIN_USER,
+    data: token
+})
+
+const logoutUser = () => ({
+    type: types.LOGOUT_USER
+})
+
 const getAllPosts = () => async dispatch => {
     const response = await fetch(`${apiURL}/posts`)
     switch(response.status)
@@ -135,6 +144,8 @@ export {
     getCourse,
     getClass,
     getSpeciality,
-    createPost
+    createPost,
+    loginUser,
+    logoutUser
 }
 

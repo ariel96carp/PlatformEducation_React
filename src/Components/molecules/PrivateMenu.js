@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom"
 import { useRef, useEffect } from "react"
 import PropTypes from "prop-types"
+import { useDispatch } from "react-redux"
+import { logoutUser } from "../redux/actionscreator"
 
 const PrivateMenu = ({ hideMenu }) => {
+    const dispatch = useDispatch()
     const closeButton = useRef()
     useEffect(() => {
         const deleteToken = () => {
             localStorage.removeItem("educationToken")
+            dispatch(logoutUser())
         }
 
         closeButton.current.addEventListener("click", deleteToken)

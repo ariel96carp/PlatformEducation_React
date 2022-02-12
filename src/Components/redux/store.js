@@ -1,18 +1,10 @@
-import { createStore, combineReducers, applyMiddleware } from "redux"
+import { createStore, applyMiddleware } from "redux"
 import { composeWithDevTools } from "redux-devtools-extension"
 import thunk from "redux-thunk"
-import {
-    postReducer,
-    specialityReducer,
-    courseReducer,
-    classReducer,
-    teacherReducer
-} from "./reducers"
+import { persistStore } from "redux-persist"
+import appReducer from "./reducers"
 
-export default createStore(combineReducers({ 
-    postReducer, 
-    specialityReducer, 
-    courseReducer, 
-    classReducer, 
-    teacherReducer}), 
-composeWithDevTools(applyMiddleware(thunk)))
+const store = createStore(appReducer, composeWithDevTools(applyMiddleware(thunk)))
+export const persistor = persistStore(store)
+
+export default store

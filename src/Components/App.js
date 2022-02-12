@@ -1,6 +1,7 @@
 import { Provider } from "react-redux"
 import { BrowserRouter as Router } from "react-router-dom"
-import store from "./redux/store"
+import store, { persistor } from "./redux/store"
+import { PersistGate } from "redux-persist/integration/react"
 import Header from "./sections/header"
 import Main from "./sections/main"
 import Footer from "./sections/footer"
@@ -10,9 +11,11 @@ function App() {
     return (
         <Router>
             <Provider store={store}>
-                <Header />
-                <Main />
-                <Footer />
+                <PersistGate loading={null} persistor={persistor}>
+                    <Header />
+                    <Main />
+                    <Footer />
+                </PersistGate>
             </Provider>
         </Router>
     );

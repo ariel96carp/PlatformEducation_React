@@ -1,8 +1,10 @@
 import { Formik, Field, Form, ErrorMessage } from "formik"
 import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
+import { loginUser } from "../redux/actionscreator"
+import { connect } from "react-redux"
 
-const Login = () => {
+const Login = ({ addUserToken }) => {
     const [ loginError, setLoginError ] = useState(false)
     const navigate = useNavigate()
 
@@ -26,6 +28,7 @@ const Login = () => {
             case 200:
                 const dataResponse = await response.json()
                 localStorage.setItem("educationToken", dataResponse.token)
+                addUserToken(dataResponse.token)
                 navigate("/")
                 break
             default:
@@ -112,4 +115,10 @@ const Login = () => {
     )
 }
 
-export default Login
+const mapDispatchToProps = dispatch => ({
+    addUserToken(token){
+        dispatch(loginUser(token))
+    }
+})
+
+export default connect(null, mapDispatchToProps)(Login)
