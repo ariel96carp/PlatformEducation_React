@@ -21,15 +21,6 @@ const getAllPosts = () => async dispatch => {
                 data: dataResponse
             })
     }
-    // switch(response.status)
-    // {
-    //     case 200:
-    //         const dataResponse = await response.json()
-    //         return dispatch ({
-    //             type: types.GET_ALL_POSTS,
-    //             data: dataResponse
-    //         })
-    // }
 }
 
 const getAllSpecialities = () => async dispatch => {
@@ -42,15 +33,6 @@ const getAllSpecialities = () => async dispatch => {
                 data: dataResponse
             })
     }
-    // switch(response.status)
-    // {
-    //     case 200:
-    //         const dataResponse = await response.json()
-    //         return dispatch ({
-    //             type: types.GET_ALL_SPECIALITIES,
-    //             data: dataResponse
-    //         })
-    // }
 }
 
 const getAllCourses = () => async dispatch => {
@@ -63,15 +45,6 @@ const getAllCourses = () => async dispatch => {
                 data: dataResponse
             })
     }
-    // switch(response.status)
-    // {
-    //     case 200:
-    //         const dataResponse = await response.json()
-    //         return dispatch ({
-    //             type: types.GET_ALL_COURSES,
-    //             data: dataResponse
-    //         })
-    // }
 }
 
 const getAllTeachers = () => async dispatch => {
@@ -84,15 +57,6 @@ const getAllTeachers = () => async dispatch => {
                 data: dataResponse
             })
     }
-    // switch(response.status)
-    // {
-    //     case 200:
-    //         const dataResponse = await response.json()
-    //         return dispatch ({
-    //             type: types.GET_ALL_TEACHERS,
-    //             data: dataResponse
-    //         })
-    // }
 }
 
 const getPost = (id) => async dispatch => {
@@ -105,15 +69,6 @@ const getPost = (id) => async dispatch => {
                 data: dataResponse.data
             })
     }
-    // switch(response.status)
-    // {
-    //     case 200:
-    //         const dataResponse = await response.json()
-    //         return dispatch ({
-    //             type: types.GET_POST,
-    //             data: dataResponse.data
-    //         })
-    // }
 }
 
 const getSpeciality = (id) => async dispatch => {
@@ -126,15 +81,6 @@ const getSpeciality = (id) => async dispatch => {
                 data: dataResponse
             })
     }
-    // switch(response.status)
-    // {
-    //     case 200:
-    //         const dataResponse = await response.json()
-    //         return dispatch ({
-    //             type: types.GET_SPECIALITY,
-    //             data: dataResponse
-    //         })
-    // }
 }
 
 const getCourse = (id) => async dispatch => {
@@ -147,15 +93,6 @@ const getCourse = (id) => async dispatch => {
                 data: dataResponse
             })
     }
-    // switch(response.status)
-    // {
-    //     case 200:
-    //         const dataResponse = await response.json()
-    //         return dispatch ({
-    //             type: types.GET_COURSE,
-    //             data: dataResponse
-    //         })
-    // }
 }
 
 const getClass = (id) => async dispatch => {
@@ -168,15 +105,6 @@ const getClass = (id) => async dispatch => {
                 data: dataResponse
             })
     }
-    // switch(response.status)
-    // {
-    //     case 200:
-    //         const dataResponse = await response.json()
-    //         return dispatch ({
-    //             type: types.GET_CLASS,
-    //             data: dataResponse
-    //         })
-    // }
 }
 
 export {
