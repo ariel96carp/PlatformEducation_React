@@ -8,8 +8,7 @@ const types = {
     GET_POST: "GET_POST",
     GET_SPECIALITY: "GET_SPECIALITY",
     GET_COURSE: "GET_COURSE",
-    GET_CLASS: "GET_CLASS",
-    CREATE_POST: "CREATE_POST"
+    GET_CLASS: "GET_CLASS"
 }
 
 export default types

@@ -29,11 +29,6 @@ const postReducer = ( state = {}, action ) => {
                 ...state,
                 post: action.data
             }
-        case types.CREATE_POST:
-            return {
-                ...state,
-                posts: state.posts.concat(action.data)
-            }
         default:
             return state
     }

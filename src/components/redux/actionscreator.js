@@ -13,126 +13,170 @@ const logoutUser = () => ({
 
 const getAllPosts = () => async dispatch => {
     const response = await fetch(`${apiURL}/posts`)
-    switch(response.status)
+    if (response.status === 200)
     {
-        case 200:
-            const dataResponse = await response.json()
+        const dataResponse = await response.json()
             return dispatch ({
                 type: types.GET_ALL_POSTS,
                 data: dataResponse
             })
     }
+    // switch(response.status)
+    // {
+    //     case 200:
+    //         const dataResponse = await response.json()
+    //         return dispatch ({
+    //             type: types.GET_ALL_POSTS,
+    //             data: dataResponse
+    //         })
+    // }
 }
 
 const getAllSpecialities = () => async dispatch => {
     const response = await fetch(`${apiURL}/especialidades`)
-    switch(response.status)
+    if (response.status === 200)
     {
-        case 200:
-            const dataResponse = await response.json()
+        const dataResponse = await response.json()
             return dispatch ({
                 type: types.GET_ALL_SPECIALITIES,
                 data: dataResponse
             })
     }
+    // switch(response.status)
+    // {
+    //     case 200:
+    //         const dataResponse = await response.json()
+    //         return dispatch ({
+    //             type: types.GET_ALL_SPECIALITIES,
+    //             data: dataResponse
+    //         })
+    // }
 }
 
 const getAllCourses = () => async dispatch => {
     const response = await fetch(`${apiURL}/cursos`)
-    switch(response.status)
+    if (response.status === 200)
     {
-        case 200:
-            const dataResponse = await response.json()
+        const dataResponse = await response.json()
             return dispatch ({
                 type: types.GET_ALL_COURSES,
                 data: dataResponse
             })
     }
+    // switch(response.status)
+    // {
+    //     case 200:
+    //         const dataResponse = await response.json()
+    //         return dispatch ({
+    //             type: types.GET_ALL_COURSES,
+    //             data: dataResponse
+    //         })
+    // }
 }
 
 const getAllTeachers = () => async dispatch => {
     const response = await fetch(`${apiURL}/profesores`)
-    switch(response.status)
+    if (response.status === 200)
     {
-        case 200:
-            const dataResponse = await response.json()
+        const dataResponse = await response.json()
             return dispatch ({
                 type: types.GET_ALL_TEACHERS,
                 data: dataResponse
             })
     }
+    // switch(response.status)
+    // {
+    //     case 200:
+    //         const dataResponse = await response.json()
+    //         return dispatch ({
+    //             type: types.GET_ALL_TEACHERS,
+    //             data: dataResponse
+    //         })
+    // }
 }
 
 const getPost = (id) => async dispatch => {
     const response = await fetch(`${apiURL}/posts/${id}`)
-    switch(response.status)
+    if (response.status === 200)
     {
-        case 200:
-            const dataResponse = await response.json()
+        const dataResponse = await response.json()
             return dispatch ({
                 type: types.GET_POST,
                 data: dataResponse.data
             })
     }
+    // switch(response.status)
+    // {
+    //     case 200:
+    //         const dataResponse = await response.json()
+    //         return dispatch ({
+    //             type: types.GET_POST,
+    //             data: dataResponse.data
+    //         })
+    // }
 }
 
 const getSpeciality = (id) => async dispatch => {
     const response = await fetch(`${apiURL}/especialidad/${id}`)
-    switch(response.status)
+    if (response.status === 200)
     {
-        case 200:
-            const dataResponse = await response.json()
+        const dataResponse = await response.json()
             return dispatch ({
                 type: types.GET_SPECIALITY,
                 data: dataResponse
             })
     }
+    // switch(response.status)
+    // {
+    //     case 200:
+    //         const dataResponse = await response.json()
+    //         return dispatch ({
+    //             type: types.GET_SPECIALITY,
+    //             data: dataResponse
+    //         })
+    // }
 }
 
 const getCourse = (id) => async dispatch => {
     const response = await fetch(`${apiURL}/curso/${id}`)
-    switch(response.status)
+    if (response.status === 200)
     {
-        case 200:
-            const dataResponse = await response.json()
+        const dataResponse = await response.json()
             return dispatch ({
                 type: types.GET_COURSE,
                 data: dataResponse
             })
     }
+    // switch(response.status)
+    // {
+    //     case 200:
+    //         const dataResponse = await response.json()
+    //         return dispatch ({
+    //             type: types.GET_COURSE,
+    //             data: dataResponse
+    //         })
+    // }
 }
 
 const getClass = (id) => async dispatch => {
     const response = await fetch(`${apiURL}/clase/${id}`)
-    switch(response.status)
+    if (response.status === 200)
     {
-        case 200:
-            const dataResponse = await response.json()
+        const dataResponse = await response.json()
             return dispatch ({
                 type: types.GET_CLASS,
                 data: dataResponse
             })
     }
-}
-
-const createPost = (data) => async dispatch => {
-    const header = new Headers()
-    header.append("Content-type", "application/json")
-    const params = {
-        method: "POST",
-        headers: header,
-        body: JSON.stringify(data)
-    }
-    const response = await fetch(`${apiURL}/posts`, params)
-    switch(response.status)
-    {
-        case 201:
-            const dataResponse = await response.json()
-            return dispatch ({
-                type: types.CREATE_POST,
-                data: dataResponse.data
-            })
-    }
+    // switch(response.status)
+    // {
+    //     case 200:
+    //         const dataResponse = await response.json()
+    //         return dispatch ({
+    //             type: types.GET_CLASS,
+    //             data: dataResponse
+    //         })
+    // }
 }
 
 export {
@@ -144,7 +188,6 @@ export {
     getCourse,
     getClass,
     getSpeciality,
-    createPost,
     loginUser,
     logoutUser
 }
